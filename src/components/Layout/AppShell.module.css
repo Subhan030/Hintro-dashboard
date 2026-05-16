@@ -1,0 +1,239 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-bg-page);
+}
+.sidebarWrapper {
+  width: 250px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+}
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-8);
+  height: 72px;
+  background-color: var(--color-bg-page);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.mobileMenuButton {
+  display: none;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+}
+.pageTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.tutorialButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 8px 16px;
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-black);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.tutorialButton:hover {
+  background-color: var(--color-hover-bg);
+}
+.profileWrapper {
+  position: relative;
+}
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+.userProfile:hover {
+  background-color: var(--color-hover-bg);
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profileMenu {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 150px;
+  z-index: 50;
+  padding: var(--space-2);
+}
+.logoutMenuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-medium);
+}
+.logoutMenuItem:hover {
+  background-color: var(--color-hover-bg);
+}
+.mainScrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--space-8);
+}
+.overlay {
+  display: none;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.logoutModal {
+  background-color: var(--color-white);
+  padding: 32px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+}
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+.modalDivider {
+  height: 1px;
+  background-color: var(--color-border-divider);
+  margin-bottom: 48px;
+}
+.modalDesc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+}
+.modalCancel {
+  padding: 10px 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-black);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+.modalConfirm {
+  padding: 10px 32px;
+  background: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .sidebarWrapper {
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+  .mobileMenuButton {
+    display: block;
+  }
+  .pageTitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tutorialButton {
+    display: none;
+  }
+  .userProfile svg {
+    display: none;
+  }
+  .mainScrollable {
+    padding: var(--space-4);
+  }
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 30;
+  }
+}
+.pageTransition {
+  animation: fadeIn var(--transition-base);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
