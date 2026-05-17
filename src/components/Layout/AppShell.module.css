@@ -6,7 +6,7 @@
   background-color: var(--color-bg-page);
 }
 .sidebarWrapper {
-  width: 250px;
+  width: 275px;
   flex-shrink: 0;
   height: 100vh;
   position: sticky;
@@ -25,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--space-8);
-  height: 72px;
+  height: 79.2px;
   background-color: var(--color-bg-page);
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
@@ -55,8 +55,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: 8px 16px;
-  border: 2px solid var(--color-black);
+  padding: 8.8px 17.6px;
+  border: 2.2px solid var(--color-black);
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   font-weight: 500;
@@ -84,8 +84,8 @@
   background-color: var(--color-hover-bg);
 }
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 35.2px;
+  height: 35.2px;
   border-radius: var(--radius-full);
   overflow: hidden;
   background-color: var(--color-border);
@@ -103,7 +103,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
-  min-width: 150px;
+  min-width: 165px;
   z-index: 50;
   padding: var(--space-2);
 }
@@ -147,29 +147,29 @@
 }
 .logoutModal {
   background-color: var(--color-white);
-  padding: 32px;
-  border-radius: 8px;
+  padding: 35.2px;
+  border-radius: 8.8px;
   width: 100%;
-  max-width: 480px;
+  max-width: 528px;
   box-shadow: var(--shadow-lg);
   text-align: left;
 }
 .modalTitle {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--color-black);
-  margin-bottom: 8px;
+  margin-bottom: 8.8px;
 }
 .modalDivider {
   height: 1px;
   background-color: var(--color-border-divider);
-  margin-bottom: 48px;
+  margin-bottom: 52.8px;
 }
 .modalDesc {
-  font-size: 14px;
+  font-size: 15.4px;
   font-weight: 500;
   color: var(--color-black);
-  margin-bottom: 32px;
+  margin-bottom: 35.2px;
   line-height: 1.5;
 }
 .modalActions {
@@ -177,7 +177,7 @@
   justify-content: space-between;
 }
 .modalCancel {
-  padding: 10px 24px;
+  padding: 11px 26.4px;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   color: var(--color-black);
@@ -187,7 +187,7 @@
   cursor: pointer;
 }
 .modalConfirm {
-  padding: 10px 32px;
+  padding: 11px 35.2px;
   background: var(--color-black);
   border: 1px solid var(--color-black);
   color: var(--color-white);
@@ -196,7 +196,7 @@
   font-weight: 600;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 844.8px) {
   .sidebarWrapper {
     position: fixed;
     transform: translateX(-100%);

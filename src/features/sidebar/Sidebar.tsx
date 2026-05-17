@@ -26,7 +26,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
       <nav className={styles.nav}>
         <NavLink to="/" className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`} onClick={onCloseMobile}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm5 2v14h11V5H9z"/>
+            <mask id="dashboardMask">
+              <rect width="24" height="24" fill="white" />
+              <rect x="0" y="8" width="24" height="2" fill="black" />
+              <rect x="14" y="10" width="2" height="14" fill="black" />
+            </mask>
+            <rect x="3" y="3" width="18" height="18" rx="3" mask="url(#dashboardMask)" />
           </svg>
           Dashboard
         </NavLink>
@@ -38,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
         </div>
         <div className={styles.navLink}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path fillRule="evenodd" clipRule="evenodd" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-4 14h8v-2H8v2zm0-4h4v-2H8v2z"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M6 2L12 2L12 6A4 4 0 0 0 16 10L20 10L20 20A2 2 0 0 1 18 22L6 22A2 2 0 0 1 4 20L4 4A2 2 0 0 1 6 2ZM14 2A6 6 0 0 1 20 8L16 8A2 2 0 0 1 14 6L14 2ZM8 13L16 13A1 1 0 0 1 17 14A1 1 0 0 1 16 15L8 15A1 1 0 0 1 7 14A1 1 0 0 1 8 13ZM8 17L12 17A1 1 0 0 1 13 18A1 1 0 0 1 12 19L8 19A1 1 0 0 1 7 18A1 1 0 0 1 8 17Z"/>
           </svg>
           Knowledge Base
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.infoIcon}>
@@ -49,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
         </div>
         <div className={styles.navLink}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path fillRule="evenodd" clipRule="evenodd" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10zm-5-4H8V9h8v2z"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M 15 16 L 12.8 21.4 A 1 1 0 0 1 11.2 21.4 L 9 16 L 7 16 A 5 5 0 0 1 2 11 L 2 7 A 5 5 0 0 1 7 2 L 17 2 A 5 5 0 0 1 22 7 L 22 11 A 5 5 0 0 1 17 16 Z M 8 6 L 16 6 A 1 1 0 0 1 17 7 A 1 1 0 0 1 16 8 L 8 8 A 1 1 0 0 1 7 7 A 1 1 0 0 1 8 6 Z M 8 10 L 12 10 A 1 1 0 0 1 13 11 A 1 1 0 0 1 12 12 L 8 12 A 1 1 0 0 1 7 11 A 1 1 0 0 1 8 10 Z"/>
           </svg>
           Prompts
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.infoIcon}>
@@ -59,13 +64,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
           </svg>
         </div>
         <div className={styles.navLink}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-            <circle cx="12" cy="12" r="8" />
-            <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
-            <line x1="6.34" y1="6.34" x2="9.88" y2="9.88" />
-            <line x1="17.66" y1="17.66" x2="14.12" y2="14.12" />
-            <line x1="17.66" y1="6.34" x2="14.12" y2="9.88" />
-            <line x1="6.34" y1="17.66" x2="9.88" y2="14.12" />
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" strokeWidth="2" />
+            <circle cx="12" cy="12" r="4" strokeWidth="2" />
+            <circle cx="12" cy="12" r="7" strokeWidth="5" strokeDasharray="6.1086 4.8869" transform="rotate(20 12 12)" />
           </svg>
           Boxy Controls
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.infoIcon}>
@@ -78,22 +80,24 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
 
       <div className={styles.bottomSection}>
         <div className={styles.navLink}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M2 12h5l2 3h6l2-3h5v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/>
-            <path d="M2 12l3.45-6.89A2 2 0 0 1 7.24 4h9.52a2 2 0 0 1 1.79 1.11L22 12" fill="none"/>
-            <path d="M12 2v10" fill="none"/>
-            <path d="M8 8l4 4 4-4" fill="none"/>
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M 3 11.5 L 8 11.5 C 9 11.5 10.5 14 12 14 C 13.5 14 15 11.5 16 11.5 L 21 11.5 L 21 16 A 3 3 0 0 1 18 19 L 6 19 A 3 3 0 0 1 3 16 Z" />
+            <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M 4 11.5 L 6 5.5 C 7 3.5 7.5 3 8.5 3 M 20 11.5 L 18 5.5 C 17 3.5 16.5 3 15.5 3 M 12 2 L 12 10.5 M 9 7.5 L 12 10.5 L 15 7.5" />
           </svg>
           Feedback History
         </div>
         <div className={styles.navLink} onClick={() => setIsFeedbackOpen(true)}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <rect x="3" y="9" width="8" height="3" rx="1" />
-            <rect x="13" y="9" width="8" height="3" rx="1" />
-            <rect x="4" y="13" width="7" height="8" rx="1" />
-            <rect x="13" y="13" width="7" height="8" rx="1" />
-            <path d="M12 9a3 3 0 1 1-3-3 3 3 0 0 1 3 3z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M12 9a3 3 0 1 0 3-3 3 3 0 0 0-3 3z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 11 7 L 4.5 7 A 1.5 1.5 0 0 0 3 8.5 A 1.5 1.5 0 0 0 4.5 10 L 11 10 Z" />
+            <path d="M 13 7 L 19.5 7 A 1.5 1.5 0 0 1 21 8.5 A 1.5 1.5 0 0 1 19.5 10 L 13 10 Z" />
+            <path d="M 11 11 L 4 11 L 4 18.5 A 1.5 1.5 0 0 0 5.5 20 L 11 20 Z" />
+            <path d="M 13 11 L 20 11 L 20 18.5 A 1.5 1.5 0 0 1 18.5 20 L 13 20 Z" />
+            <path fillRule="evenodd" d="
+              M 5 4.5 A 3.5 3.5 0 1 0 12 4.5 A 3.5 3.5 0 1 0 5 4.5 Z
+              M 6.7 4.5 A 1.8 1.8 0 1 1 10.3 4.5 A 1.8 1.8 0 1 1 6.7 4.5 Z
+              M 12 4.5 A 3.5 3.5 0 1 0 19 4.5 A 3.5 3.5 0 1 0 12 4.5 Z
+              M 13.7 4.5 A 1.8 1.8 0 1 1 17.3 4.5 A 1.8 1.8 0 1 1 13.7 4.5 Z
+            " />
           </svg>
           Feedback
         </div>

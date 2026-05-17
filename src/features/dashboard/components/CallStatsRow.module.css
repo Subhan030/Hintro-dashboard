@@ -15,8 +15,8 @@
   gap: var(--space-4);
 }
 .iconWrapper {
-  width: 48px;
-  height: 48px;
+  width: 52.8px;
+  height: 52.8px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -33,16 +33,16 @@
   color: var(--color-text-secondary);
 }
 .cardValue {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: var(--weight-bold);
   color: var(--color-black);
 }
-@media (max-width: 1024px) {
+@media (max-width: 1126.4px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 704px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-3);
@@ -52,17 +52,17 @@
     gap: var(--space-3);
   }
   .iconWrapper {
-    width: 36px;
-    height: 36px;
+    width: 39.6px;
+    height: 39.6px;
   }
   .iconWrapper svg {
-    width: 18px;
-    height: 18px;
+    width: 19.8px;
+    height: 19.8px;
   }
   .cardTitle {
-    font-size: 11px;
+    font-size: 12.1px;
   }
   .cardValue {
-    font-size: 16px;
+    font-size: 17.6px;
   }
 }

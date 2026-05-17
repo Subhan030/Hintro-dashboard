@@ -19,8 +19,8 @@ const CallStatsRow: React.FC<CallStatsRowProps> = ({ stats }) => {
       <div className={styles.card}>
         <div className={styles.iconWrapper} style={{ backgroundColor: 'var(--color-icon-red-bg)', color: 'var(--color-icon-red)' }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M 13 11 h 8.95 A 10 10 0 0 0 13 2.05 V 11 Z" />
-            <path d="M 11 13 h 10.95 A 10 10 0 1 1 11 2.05 V 13 Z" />
+            <path d="M 14.5 9.5 L 21.5 9.5 A 7 7 0 0 0 14.5 2.5 Z" />
+            <path d="M 12 12 L 22 12 A 10 10 0 1 1 12 2 Z" />
           </svg>
         </div>
         <div className={styles.cardContent}>
@@ -46,7 +46,9 @@ const CallStatsRow: React.FC<CallStatsRowProps> = ({ stats }) => {
       <div className={styles.card}>
         <div className={styles.iconWrapper} style={{ backgroundColor: 'var(--color-icon-green-bg)', color: 'var(--color-icon-green)' }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 8l-1-2.5L15.5 4.5 18 3.5 19 1l1 2.5L22.5 4.5 20 5.5 19 8zm-8 14l-2.5-5.5L3 14l5.5-2.5L11 6l2.5 5.5L19 14l-5.5 2.5L11 22z"/>
+            <g transform="translate(-1.8, -1.8) scale(1.15)">
+              <path fillRule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0 -2.576 2.576l-.813 2.846a.75.75 0 0 1 -1.442 0l-.813-2.846a3.75 3.75 0 0 0 -2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1 -1.456 0l-.258-1.036a2.625 2.625 0 0 0 -1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1 -1.422 0l-.395-1.183a1.5 1.5 0 0 0 -.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clipRule="evenodd" />
+            </g>
           </svg>
         </div>
         <div className={styles.cardContent}>

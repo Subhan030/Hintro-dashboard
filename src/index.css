@@ -1,2 +1,6 @@
 @import './styles/tokens.css';
 @import './styles/reset.css';
+
+html {
+  font-size: 17.6px;
+}
